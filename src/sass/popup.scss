@@ -125,11 +125,3 @@ form {
   display: flex;
   justify-content: space-between;
 }
-.col-6 {
-  margin-right: 2rem;
-  flex: 1;
-
-  &:last-child {
-    margin-right: 0;
-  }
-}

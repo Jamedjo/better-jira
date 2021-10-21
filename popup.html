@@ -15,20 +15,15 @@
     <main>
       <form id="better-jira">
         <div class="row">
-          <div class="col-6">
-            <p>Turn the changes on/off.</p>
-            <label class="checkbox"><input type="checkbox" id="enabled" name="enabled"> Enabled</label>
-          </div>
-          <div class="col-6">
-            <p>Toggle Standup Mode.</p>
-            <label class="checkbox"><input type="checkbox" id="standup" name="standup"> Standup Mode</label>
-          </div>
+          <label class="checkbox"><input type="checkbox" id="enabled" name="enabled">Enable Better JIRA</label>
         </div>
-        <p>Set your default Kanban Column Width.</p>
+        <div class="row">
+          <label class="checkbox"><input type="checkbox" id="standup" name="standup">Enable Standup Mode</label>
+        </div>
         <div class="card">
           <div class="row">
             <div class="form-element">
-              <label for="columnWidth">Column width</label>
+              <label for="columnWidth">Kanban Column Width</label>
               <input type="number" id="columnWidth" name="columnWidth" step="10">
             </div>
             <input type="submit" name="Save" value="Resize">
