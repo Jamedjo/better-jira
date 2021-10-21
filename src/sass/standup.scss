@@ -10,7 +10,11 @@ body.standup {
   }
 
   #ghx-operations {
-    padding-top: 1rem;
+    padding-top: 0.5rem;
+  }
+
+  #ghx-quick-filters {
+    margin-bottom: 0.5rem;
   }
 
   #gh {
@@ -54,15 +58,27 @@ body.standup {
     }
   }
 
-  /*
-  |--------------------------------------------------------------------------
-  | New JIRA Experience
-  |--------------------------------------------------------------------------
-  */
-
   &.adg3 {
-    #navigation-app {
+    //#jira-frontend {
+    //  [data-layout-container="true"] {
+    //    grid-template-rows: var(--bannerHeight,0px) 0px auto;
+    //  }
+    //}
+
+    #navigation-app, #ak-jira-navigation {
       display: none;
+    }
+
+    #ak-main-content {
+      margin-top: calc(-1 * var(--topNavigationHeight, 56px));
+
+      [data-testid="rapidboard-breadcrumbs"] {
+        margin-top: 1.0rem;
+      }
+    }
+
+    #ak-side-navigation div {
+      top: calc(var(--bannerHeight,0px) + 0px)
     }
 
     #page-body > #content {
@@ -74,3 +90,4 @@ body.standup {
     }
   }
 }
+
