@@ -19,6 +19,11 @@
     "48": "icon_48.png",
     "128": "icon_128.png"
   },
-  "permissions": ["<all_urls>", "https://*.atlassian.net/*", "storage", "tabs", "activeTab"],
+  "permissions": ["https://*.atlassian.net/*", "storage"],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "jira-standup-mode@jamedjo.example.com"
+    }
+  },
   "update_url": "https://clients2.google.com/service/update2/crx"
 }
