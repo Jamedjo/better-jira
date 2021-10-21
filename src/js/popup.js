@@ -3,8 +3,8 @@ class Popup {
     this.Storage = chrome.storage.sync;
     this.data = {};
     this.defaults = {
-      columnWidth: 200,
-      enabled: true,
+      columnWidth: 220,
+      enabled: false,
       standup: false,
       updatedEvent: 'better-jira:updated',
     };
