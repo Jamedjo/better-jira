@@ -9,3 +9,14 @@ Ever wished that large Kanban boards could not be squished? Now you can set your
 > **NOTE**: You will need `node` and `yarn` set up on your computer.
 
 Type `yarn run` into your terminal from the root of this project. It will output the available commands.
+
+### To build the code:
+
+You will need node version 10.9.0 and yarn installed. In the root of the project, run:
+
+```
+yarn
+yarn prod
+```
+
+The source code is in the `src` directory, and the distributed code is in the the `dist` directory.
