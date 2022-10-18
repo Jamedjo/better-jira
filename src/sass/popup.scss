@@ -41,7 +41,10 @@ main {
   //
 }
 
-@include close-button();
+@include close-button($top: -5px);
+header #close {
+  font-size: 3rem;
+}
 
 h1 {
   margin: 0;
@@ -72,10 +75,6 @@ form {
     border: 1px solid #dddddd;
     display: block;
     cursor: pointer;
-
-    input {
-      vertical-align: top;
-    }
   }
 
   input[type='submit'] {
