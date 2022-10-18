@@ -27,6 +27,14 @@ header {
   border-bottom: 1px solid #d1d4d7;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   position: relative;
+
+  #logo-icon {
+    height: 28px;
+    position: relative;
+    top: 4px;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
 }
 
 main {

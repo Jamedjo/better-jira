@@ -7,6 +7,7 @@ const mix = require('laravel-mix');
  */
 
 mix
+  .copy('icon_128.png', 'dist/images/icon.png')
   .sass('src/sass/content.scss', 'dist/css')
   .sass('src/sass/standup.scss', 'dist/css')
   .sass('src/sass/popup.scss', 'dist/css')
