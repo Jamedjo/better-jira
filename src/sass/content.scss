@@ -4,6 +4,19 @@
 }
 
 body.jira-standup-mode {
+  /* compact column headers */
+  #ghx-column-headers .ghx-column {
+    padding:5px 17px !important;
+
+    h2, .ghx-qty, .ghx-limits {
+      font-size:1em !important;
+      font-weight:700 !important;
+    }
+  }
+  #gh #ghx-work #ghx-pool-column.ghx-flexible-board .ghx-swimlane .ghx-swimlane-header {
+    top:30px !important;
+  }
+
   /* horizontal scroll on kanban boards */
   #ghx-pool-column {
     overflow-y: hidden;
