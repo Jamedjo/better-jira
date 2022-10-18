@@ -4,6 +4,7 @@ class Standup {
   constructor() {
     this.cssClass = 'standup';
     this.instructionsCssClass = 'JiraStandupMode-instructions';
+    this.parentLocationId = 'ghx-controls-buttons';
     this.data = {};
     this.running = true;
   }
@@ -50,7 +51,9 @@ class Standup {
       instructionsEl.setAttribute('data-standup-close', '');
       instructionsEl.classList.add(this.instructionsCssClass);
       instructionsEl.innerHTML = '\n        <span class="text">Close Standup Mode <span class="close">&nbsp;&plus;&nbsp;</span></span>\n      ';
-      document.body.appendChild(instructionsEl);
+
+      var parentLocationEl = document.getElementById(this.parentLocationId) || document.body
+      parentLocationEl.appendChild(instructionsEl);
     }
   }
 
