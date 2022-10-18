@@ -10,7 +10,7 @@
   "content_scripts": [
     {
       "css": ["dist/css/content.css", "dist/css/standup.css"],
-      "js": ["dist/js/better-jira.js"],
+      "js": ["dist/js/index.js"],
       "matches": ["https://*.atlassian.net/*"]
     }
   ],

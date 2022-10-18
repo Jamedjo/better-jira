@@ -1,7 +1,7 @@
 import Standup from './Standup';
 import Jira from './Jira';
 
-export default class BetterJira {
+export default class JiraStandupMode {
   static initialize() {
     return new this();
   }
@@ -33,10 +33,10 @@ export default class BetterJira {
     }
 
     if (!detail.enabled) {
-      document.body.classList.remove('better-jira');
+      document.body.classList.remove('jira-standup-mode');
       return;
     }
-    document.body.classList.add('better-jira');
+    document.body.classList.add('jira-standup-mode');
     this._getPreferredWidth(detail);
   }
 
@@ -68,7 +68,7 @@ export default class BetterJira {
       // console.log('🔧: Swimlanes are present, resizing now.');
 
       let enabled = () => {
-        document.body.classList.add('better-jira');
+        document.body.classList.add('jira-standup-mode');
 
         this.Storage.get('columnWidth', this._getPreferredWidth.bind(this));
         this._protectAgainstReactBoardReloading();
@@ -76,7 +76,7 @@ export default class BetterJira {
 
       //-- Disallow setting columns if the plugin is not enabled
       let disabled = () => {
-        document.body.classList.remove('better-jira');
+        document.body.classList.remove('jira-standup-mode');
       };
       this._ifEnabled(enabled, disabled);
     }, 100);

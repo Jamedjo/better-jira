@@ -6,7 +6,7 @@ class Popup {
       columnWidth: 220,
       enabled: false,
       standup: false,
-      updatedEvent: 'better-jira:updated',
+      updatedEvent: 'jira-standup-mode:updated',
     };
 
     this.loadListener = this.boot.bind(this);
@@ -83,7 +83,7 @@ class Popup {
       this.save();
     });
 
-    document.querySelector('#better-jira #columnWidth').addEventListener('change', (changeEvent) => {
+    document.querySelector('#jira-standup-mode #columnWidth').addEventListener('change', (changeEvent) => {
       if (changeEvent.target.value > 10) {
         this.data.columnWidth = document.getElementById('columnWidth').value;
         this.save();

@@ -5,8 +5,8 @@
     "watch": "mix watch",
     "watch-poll": "mix watch -- --watch-options-poll=1000",
     "prod": "mix --production",
-    "build:chrome": "zip -r build/chrome-better-jira.zip . -x './node_modules/*'  -x './.*' -x './build/*'",
-    "build:firefox": "zip -r build/firefox-better-jira.zip . -x './node_modules/*' -x './.*' -x './build/*'"
+    "build:chrome": "zip -r build/chrome-jira-standup-mode.zip . -x './node_modules/*'  -x './.*' -x './build/*'",
+    "build:firefox": "zip -r build/firefox-jira-standup-mode.zip . -x './node_modules/*' -x './.*' -x './build/*'"
   },
   "devDependencies": {
     "laravel-mix": "^6.0.49",
