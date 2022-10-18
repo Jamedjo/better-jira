@@ -50,10 +50,19 @@ class Standup {
       var instructionsEl = document.createElement('div');
       instructionsEl.setAttribute('data-standup-close', '');
       instructionsEl.classList.add(this.instructionsCssClass);
-      instructionsEl.innerHTML = '\n        <span class="text">Close Standup Mode <span class="close">&nbsp;&plus;&nbsp;</span></span>\n      ';
+      instructionsEl.innerHTML = '\n        <span class="text">Standup Mode <span class="close">&nbsp;&plus;&nbsp;</span></span>\n      ';
 
-      var parentLocationEl = document.getElementById(this.parentLocationId) || document.body
-      parentLocationEl.appendChild(instructionsEl);
+      var parentLocationEl = document.getElementById(this.parentLocationId);
+      if (parentLocationEl) {
+        parentLocationEl.appendChild(instructionsEl);
+      } else {
+        // If parent location isn't available at page start then try later
+        parentLocationEl.appendChild(document.body);
+        setTimeout(()=>{
+          document.getElementById(this.parentLocationId).appendChild(instructionsEl);
+        }, 1000):
+
+      }
     }
   }
 
