@@ -3,3 +3,4 @@
 *.map
 /yarn-error.log
 /mix-manifest.json
+/dist
