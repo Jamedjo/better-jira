@@ -21,13 +21,6 @@ body.better-jira {
     width: var(--viewport-width) !important;
   }
 
-  /* story detail view coulmn */
-  #ghx-detail-view:not(.ui-resizable) {
-    width: var(--detail-view-width) !important;
-    position: relative;
-    z-index: 3;
-  }
-
   /* Prevent column headers from overlapping when scrolling vertically */
   .aui-sidebar {
     z-index: 2;
@@ -36,16 +29,6 @@ body.better-jira {
   #ghx-pool-column {
     display: block !important;
     overflow-x: scroll !important;
-  }
-
-  .better-resize {
-    z-index: 90;
-    width: 7px;
-    position: absolute;
-    top: 0;
-    left: -2px;
-    cursor: col-resize;
-    height: 100%;
   }
 }
 

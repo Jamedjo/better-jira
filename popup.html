@@ -17,17 +17,12 @@
         <div class="row">
           <label class="checkbox"><input type="checkbox" id="standup" name="standup">Enable Standup Mode</label>
         </div>
-        <div class="row">
-          <label class="checkbox"><input type="checkbox" id="enabled" name="enabled">Enable Better JIRA</label>
-        </div>
-        <div class="card">
-          <div class="row">
-            <div class="form-element">
-              <label for="columnWidth">Kanban Column Width</label>
-              <input type="number" id="columnWidth" name="columnWidth" step="10">
-            </div>
-          </div>
-        </div>
+        <label class="checkbox">
+          <input type="checkbox" id="enabled" name="enabled">
+          Fixed Kanban Columns
+          <label for="columnWidth">Width</label>
+          <input type="number" id="columnWidth" name="columnWidth" step="10">
+        </label>
       </form>
     </main>
   </body>
