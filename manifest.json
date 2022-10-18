@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "JIRA Standup Mode",
   "version": "2.1.0",
-  "description": "Enables standup mode on fullscreen",
+  "description": "Standup mode to show kanban board with more vertical space",
   "browser_action": {
     "default_icon": "icon_16.png",
     "default_popup": "popup.html"
