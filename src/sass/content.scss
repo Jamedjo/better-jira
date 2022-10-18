@@ -17,6 +17,11 @@ body.jira-standup-mode {
     top:30px !important;
   }
 
+  /* hide breadcrumbs */
+  [data-testid="rapidboard-breadcrumbs"] {
+    display: none;
+  }
+
   /* horizontal scroll on kanban boards */
   #ghx-pool-column {
     overflow-y: hidden;
