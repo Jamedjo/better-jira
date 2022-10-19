@@ -1,4 +1,5 @@
 import Jira from './Jira';
+import Mutations from '../utils/Mutations';
 
 class Standup {
   constructor() {
@@ -7,6 +8,7 @@ class Standup {
     this.parentLocationId = 'ghx-controls-buttons';
     this.data = {};
     this.running = true;
+    this.instructionsEl = this._buildCloseButton(this.instructionsCssClass)
   }
 
   run(state) {
@@ -45,25 +47,38 @@ class Standup {
     //-- Add `standup` class to the body
     document.body.classList.add(this.cssClass);
 
-    //-- Add Instructions element
+    //-- Add Close Standup Mode button
     if (document.querySelectorAll(`.${this.instructionsCssClass}`).length === 0) {
-      var instructionsEl = document.createElement('div');
-      instructionsEl.setAttribute('data-standup-close', '');
-      instructionsEl.classList.add(this.instructionsCssClass);
-      instructionsEl.innerHTML = '\n        <span class="text">Standup Mode <span class="close">&nbsp;&plus;&nbsp;</span></span>\n      ';
+      // Default to appending close button to body
+      document.body.appendChild(this.instructionsEl);
 
-      var parentLocationEl = document.getElementById(this.parentLocationId);
-      if (parentLocationEl) {
-        parentLocationEl.appendChild(instructionsEl);
-      } else {
-        // If parent location isn't available at page start then try later
-        parentLocationEl.appendChild(document.body);
-        setTimeout(()=>{
-          document.getElementById(this.parentLocationId).appendChild(instructionsEl);
-        }, 1000):
+      // Place next to other buttons once loaded
+      Mutations.waitForElement(Jira.content(), this.parentLocationId, ()=>{
+        this._moveInstructionsToParent()
+      });
 
-      }
+      // Restore if removed by Jira
+      Mutations.onNodeRemoval(Jira.content(), this.instructionsCssClass, () => {
+        this._moveInstructionsToParent();
+      });
     }
+  }
+
+  _moveInstructionsToParent() {
+    this._parentElement().appendChild(this.instructionsEl);
+  }
+
+  _parentElement() {
+    return document.getElementById(this.parentLocationId);
+  }
+
+  _buildCloseButton(css_class) {
+    var instructionsEl = document.createElement('div');
+    instructionsEl.setAttribute('data-standup-close', '');
+    instructionsEl.classList.add(css_class);
+    instructionsEl.id = css_class;
+    instructionsEl.innerHTML = '\n        <span class="text">Standup Mode <span class="close">&nbsp;&plus;&nbsp;</span></span>\n      ';
+    return instructionsEl;
   }
 
   _cleanupStandup() {

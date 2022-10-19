@@ -47,6 +47,7 @@ body.standup {
     height: calc(100vh - 71px) !important;
   }
 
+  // Place close button alongside other controls
   #ghx-controls-buttons {
     display: flex;
     gap: 10px;
@@ -74,6 +75,16 @@ body.standup {
       }
 
       @include close-button($top: 7px, $error-color: #172b4d);
+    }
+  }
+
+  // Override for when close button cannot be correctly placed
+  > .JiraStandupMode {
+    &-instructions {
+      position: fixed;
+      top: 0.55rem;
+      right: 2.5rem;
+      z-index: 2;
     }
   }
 
