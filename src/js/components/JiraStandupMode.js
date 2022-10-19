@@ -1,5 +1,6 @@
 import Standup from './Standup';
 import Jira from './Jira';
+import Mutations from '../utils/Mutations';
 
 export default class JiraStandupMode {
   static initialize() {
@@ -152,26 +153,6 @@ export default class JiraStandupMode {
   }
 
   _protectAgainstReactBoardReloading() {
-    var mutationObserver = new MutationObserver((mutations) => {
-      let contentHasBeenDeleted = mutations.find((mutation) => {
-        if (mutation.removedNodes < 1) {
-          return false;
-        }
-
-        let removedNodes = [...mutation.removedNodes];
-        return removedNodes.find((node) => {
-          return node.id === 'ghx-pool-column';
-        });
-      });
-
-      if (contentHasBeenDeleted) {
-        mutationObserver.disconnect();
-        this._initialColumnResize();
-      }
-    });
-    mutationObserver.observe(Jira.content(), {
-      childList: true,
-      subtree: true
-    });
+    Mutations.onNodeRemoval(Jira.content(), 'ghx-pool-column', () => this._initialColumnResize());
   }
 }
