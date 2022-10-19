@@ -59,7 +59,9 @@ class Standup {
 
       // Restore if removed by Jira
       Mutations.onNodeRemoval(Jira.content(), this.instructionsCssClass, () => {
-        this._moveInstructionsToParent();
+        if(window.standup){
+          this._moveInstructionsToParent();
+        }
       });
     }
   }
@@ -82,8 +84,8 @@ class Standup {
   }
 
   _cleanupStandup() {
-    document.body.classList.remove(this.cssClass);
     window.standup = false;
+    document.body.classList.remove(this.cssClass);
 
     //-- Clear the event listener
     document.removeEventListener('click', this._listener);
