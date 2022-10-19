@@ -31,6 +31,7 @@ body.jira-standup-mode {
   #ghx-pool-column {
     display: block !important;
     overflow-x: scroll !important;
+    overflow-y: scroll;
   }
 }
 
