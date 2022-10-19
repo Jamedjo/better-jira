@@ -10,7 +10,8 @@ body.jira-standup-mode {
     overflow-y: hidden;
   }
   #ghx-pool,
-  #jira-board {
+  #jira-board,
+  #ghx-column-header-group {
     width: var(--viewport-width);
   }
 
